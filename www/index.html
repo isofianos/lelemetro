@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Λελέμετρο Αεροπορίας</title>
+    </head>
+    <body>
+        <section class="upperBody">
+            <ul>
+                <li>
+                    <a href="#openModal">
+                        <img id ="profile" src="img/default.png" style="width: 100px; height: 100px;">
+                    </a>
+                </li>
+                <li>
+                    <img src="img/rank.png">
+                </li>
+            </ul>
+            <p id="name">Σοφιανός Ιωάννης</p>
+            <p id="rank">Ανθυποσμηναγός</p>
+            <p id="data">ΕΣΣΟ : 2015ΣΤ</p>
+            <p id="place">Λόχος φρούρισης & απόδωσης τιμών</p>
+        </section>
+        <div id="progressBar">
+        </div>
+        <section class="lowerBody">
+            <p>Υπηρετίσιμες μέρες :<span id="daysDone">0</span></p>
+            <p>Εναπομείναντες μέρες :<span id="daysLeft">0</span></p>
+            <p>Άδεια :<span id="normalDaysOff">0</span></p>
+            <p>Επόμενος βαθμος σε :<span id="nextRankIn">0</span></p>
+        </section>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Select Category</h2>
+                <ul>
+                    <li>
+                        <img src="img/camera.png">
+                        <p id="newImage">New</p>
+                    </li>
+                    <li>
+                        <img src="img/picture.png">
+                        <p id="libImage">Gallery</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/calculate.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
