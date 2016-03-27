@@ -4,12 +4,11 @@ var leleDay = new Date('August, 08, 2016');
 
 document.getElementById('newImage').onclick = function(){
   capturePhotoWithFile();
+  window.location = "#close";
 }
 document.getElementById('libImage').onclick = function(){
   getPhoto(pictureSource.PHOTOLIBRARY);
-}
-document.getElementById('profile').onclick = function(){
-	capturePhotoWithFile();
+  window.location = "#close";
 }
 
 function dateDiffInDays(d1, d2){
