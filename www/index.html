@@ -14,39 +14,44 @@
         <section class="upperBody">
             <ul>
                 <li>
-                    <a href="#openModal">
-                        <img id ="profile" src="img/default.png" style="width: 100px; height: 100px;">
-                    </a>
-                </li>
-                <li>
-                    <img src="img/rank.png">
-                </li>
-            </ul>
-            <p id="name">Σοφιανός Ιωάννης</p>
-            <p id="rank">Ανθυποσμηναγός</p>
-            <p id="data">ΕΣΣΟ : 2015ΣΤ</p>
-            <p id="place">Λόχος φρούρισης & απόδωσης τιμών</p>
+                        <a href="#openModal">
+                            <img id ="profile">
+                        </a>
+                    </li>
+                    <li>
+                        <img id="rankImg">
+                    </li>
+                </ul>
+                <p id="name">Σοφιανός Ιωάννης</p>
+                <p id="rank">Ανθυποσμηναγός</p>
+                <p id="data">ΕΣΣΟ : 2015ΣΤ</p>
+                <p id="place">Λόχος φρούρισης & απόδωσης τιμών</p>
+            </ul>     
         </section>
         <div id="progressBar">
+            <div id="myBar">
+            </div>
         </div>
         <section class="lowerBody">
-            <p>Υπηρετίσιμες μέρες :<span id="daysDone">0</span></p>
-            <p>Εναπομείναντες μέρες :<span id="daysLeft">0</span></p>
-            <p>Άδεια :<span id="normalDaysOff">0</span></p>
-            <p>Επόμενος βαθμος σε :<span id="nextRankIn">0</span></p>
+            <div>
+                <p>Υπηρετίσιμες μέρες :<span id="daysDone">0</span></p>
+                <p>Εναπομείναντες μέρες :<span id="daysLeft">0</span></p>
+                <p>Άδεια :<input class="daysOff right" id="days" type="number" value="0" min="0" max="1000000"></p>
+                <p>Επόμενος βαθμος σε :<span id="nextRankIn">0</span></p>
+            </div>
         </section>
         <div id="openModal" class="modalDialog">
             <div>
                 <a href="#close" title="Close" class="close">X</a>
                 <h2>Select Category</h2>
                 <ul>
-                    <li>
+                    <li id="newImage">
                         <img src="img/camera.png">
-                        <p id="newImage">New</p>
+                        <p>New</p>
                     </li>
-                    <li>
+                    <li id="libImage">
                         <img src="img/picture.png">
-                        <p id="libImage">Gallery</p>
+                        <p>Gallery</p>
                     </li>
                 </ul>
             </div>

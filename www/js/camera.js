@@ -8,33 +8,34 @@ function onDeviceReady() {
   destinationType=navigator.camera.DestinationType;
 }
 
-function onPhotoDataSuccess(imageData) {
-  var smallImage = document.getElementById('profile');
-  smallImage.src = "data:image/jpeg;base64," + imageData;
-}
-
 function onPhotoFileSuccess(imageData) {
   var smallImage = document.getElementById('profile');
   smallImage.src = imageData;
+  smallImage.style.heigth = '100px';
+  localStorage.setItem('profileImg', JSON.stringify({src:imageData, width:smallImage.style.width, heigth:smallImage.style.heigth}));
 }
 
 function onPhotoURISuccess(imageURI) {
   var largeImage = document.getElementById('profile');
   largeImage.src = imageURI;
-}
-function capturePhotoWithData() {
-  // Take picture using device camera and retrieve image as base64-encoded string
-  navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+  largeImage.style.heigth = '100px';
+  localStorage.setItem('profileImg', JSON.stringify({src:imageURI, width:largeImage.style.width, heigth:largeImage.style.heigth}));
 }
 function capturePhotoWithFile() {
-  navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+  navigator.camera.getPicture(onPhotoFileSuccess, onFail, { 
+    quality: 50, 
+    destinationType: Camera.DestinationType.FILE_URI,
+    saveToPhotoAlbum: true
+  });
 }
 
 function getPhoto(source) {
   // Retrieve image file location from specified source
-  navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+  navigator.camera.getPicture(onPhotoURISuccess, onFail, { 
+    quality: 50, 
     destinationType: destinationType.FILE_URI,
-    sourceType: source });
+    sourceType: source
+  });
 }
 
 function onFail(message) {
